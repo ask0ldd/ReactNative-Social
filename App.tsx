@@ -1,27 +1,77 @@
-import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar'
+import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <ImageBackground source={'./assets/bg.png'} resizeMode={'cover'} style={styles.image}>
-        <Text style={styles.topText}>Open up App.tsx to start working on your app!</Text>
-        
-        <View style={styles.gradientContainer}></View>
-      </ImageBackground>
+      <View style={styles.main}>
+        <View style={styles.searchBar}>
+          <Text style={styles.searchText}>Search</Text>
+        </View>
+      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#dfdfdf',
+    rowGap:24,
+    flexDirection:'column',
+    justifyContent:'flex-start',
+    alignItems:'center',
   },
-  image: {
+  main :{
+    flex:1,
+    width:'80%',
+    justifyContent:'center',
+    maxWidth:960,
+    marginHorizontal:'auto',
+  },
+  searchBar:{
+    flex:1,
+    backgroundColor:'#fff',
+    border:'1px solid #afafaf',
+    width:'100%',
+    maxHeight:48,
+  },
+  searchText:{
+    width:'100%',
+    padding: 16,
+  }
+})
+
+const data : Array<IItem> = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+]
+
+interface IItem {
+  id : string
+  title : string
+}
+
+/*
+
+<ImageBackground source={'./assets/bg.png'} resizeMode={'cover'} style={styles.image}>
+  <Text style={styles.topText}>Open up App.tsx to start working on your app!</Text>
+  <FlatList data={data}
+  renderItem={({item} : {item:IItem}) => <Item title={item.title} />}
+  keyExtractor={(item : IItem) => item.id}/>
+</ImageBackground>
+
+image: {
     flex: 1,
     width: '100%', height: '100%',
     justifyContent: 'center',
@@ -46,5 +96,19 @@ const styles = StyleSheet.create({
     border:'1px solid blue',
     borderRadius:32,
     overflow:'hidden',
-  }
-});
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    color:'#000',
+  },
+
+*/
+
+/*const Item = ({title} : {title:string, id?:string}) => (
+  <View style={styles.item}>
+    <Text>{title}</Text>
+  </View>
+)*/
