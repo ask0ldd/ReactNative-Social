@@ -1,7 +1,17 @@
 import { StatusBar } from 'expo-status-bar'
-import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native'
+import Card from './components/Card'
+// import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
+
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 export default function App() {
+
+  /*let [fontsLoaded] = useFonts({
+    Nunito_500Medium,
+  })*/
+
   return (
     <View style={styles.container}>
       <View style={styles.main}>
@@ -9,16 +19,12 @@ export default function App() {
           <Text>Search</Text><Text>Send</Text>
         </View>
         <View style={styles.practitionersContainer}>
-            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16}}>
-              <View style={{height:120, width:120, backgroundColor:'#fff', padding:'20px', borderRadius:6}}>
-                <Text>aaa</Text>
-              </View>
-              <View style={{height:120, width:120, backgroundColor:'#fff'}}>
-                <Text>bbb</Text>
-              </View>
-              <View style={{height:120, width:120, backgroundColor:'#fff'}}>
-                <Text>ccc</Text>
-              </View>
+            <ScrollView style={{overflowY : 'visible'}} horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, overflowY : 'visible'}}>
+              <Card text={'aaa'}/>
+              <Card text={'bbb'}/>
+              <Card text={'ccc'}/>
+              <Card text={'ddd'}/>
+              <Card text={'eee'}/>
             </ScrollView>
         </View>
       </View>
@@ -36,8 +42,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   main :{
-    flex:1,
-    width:'80%',
+    flex:0,
+    width:'100%',
     marginHorizontal:'auto',
     paddingTop:20,
     flexDirection:'column',
@@ -47,11 +53,12 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     backgroundColor:'#fff',
     border:'1px solid #afafaf',
-    width:'100%',
+    width: windowWidth-32,
     justifyContent:'space-between',
     alignItems:'center',
     padding: 18,
     borderRadius:6,
+    marginHorizontal: 16,
   },
   practitionersContainer:{
     height:120,
