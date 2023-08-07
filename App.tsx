@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <ImageBackground source={'./assets/bg.png'} resizeMode={'cover'} style={styles.image}>
-        <Text style={{height:'48px', display:'flex', justifyContent:'center', alignItems:'center'}}>Open up App.tsx to start working on your app!</Text>
+        <Text style={styles.topText}>Open up App.tsx to start working on your app!</Text>
         
         <View style={styles.gradientContainer}></View>
       </ImageBackground>
@@ -30,6 +30,21 @@ const styles = StyleSheet.create({
     flex:1,
     width:'100%',
     height:'100%',
-    backgroundColor:'#000'
+    backgroundColor:'#fff',
+    zIndex:1,
+  },
+  topText:{
+    height:48, 
+    display:'flex',
+    color:'#fff',
+    fontWeight:'600',
+    justifyContent:'center', 
+    alignItems:'center',
+    backgroundImage:'linear-gradient(45deg, blue, red)',
+    boxShadow:'0px 4px 8px rgba(0,0,0,0.5)',
+    zIndex:2,
+    border:'1px solid blue',
+    borderRadius:32,
+    overflow:'hidden',
   }
 });
