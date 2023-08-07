@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar'
-import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <View style={styles.searchBar}>
-          <Text style={styles.searchText}>Search</Text>
+          <Text>Search</Text><Text>Send</Text>
+        </View>
+        <View style={styles.practitionersContainer}>
+            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16}}>
+              <View style={{height:120, width:120, backgroundColor:'#fff', padding:'20px', borderRadius:6}}>
+                <Text>aaa</Text>
+              </View>
+              <View style={{height:120, width:120, backgroundColor:'#fff'}}>
+                <Text>bbb</Text>
+              </View>
+              <View style={{height:120, width:120, backgroundColor:'#fff'}}>
+                <Text>ccc</Text>
+              </View>
+            </ScrollView>
         </View>
       </View>
     </View>
@@ -25,20 +38,24 @@ const styles = StyleSheet.create({
   main :{
     flex:1,
     width:'80%',
-    justifyContent:'center',
-    maxWidth:960,
     marginHorizontal:'auto',
+    paddingTop:20,
+    flexDirection:'column',
   },
   searchBar:{
-    flex:1,
+    flex:0,
+    flexDirection:'row',
     backgroundColor:'#fff',
     border:'1px solid #afafaf',
     width:'100%',
-    maxHeight:48,
+    justifyContent:'space-between',
+    alignItems:'center',
+    padding: 18,
+    borderRadius:6,
   },
-  searchText:{
-    width:'100%',
-    padding: 16,
+  practitionersContainer:{
+    height:120,
+    marginTop:20,
   }
 })
 
