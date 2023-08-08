@@ -3,8 +3,7 @@ import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensio
 import Card from './components/Card'
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
-const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
+const {height, width} = Dimensions.get('window')
 
 export default function App() {
 
@@ -16,15 +15,15 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.main}>
         <View style={styles.searchBar}>
-          <Text>Search</Text><Text>Send</Text>
+          <Text style={{color:'#93AEB5'}}>Search</Text><Text style={{color:'#93AEB5'}}>Send</Text>
         </View>
         <View style={styles.practitionersContainer}>
-            <ScrollView style={{overflowY : 'visible'}} horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, overflowY : 'visible'}}>
-              <Card text={'aaa'}/>
-              <Card text={'bbb'}/>
-              <Card text={'ccc'}/>
-              <Card text={'ddd'}/>
-              <Card text={'eee'}/>
+            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
+              <Card text={'aaa'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
+              <Card text={'bbb'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
+              <Card text={'ccc'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
+              <Card text={'ddd'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
+              <Card text={'eee'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
             </ScrollView>
         </View>
       </View>
@@ -35,11 +34,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#dfdfdf',
+    // backgroundColor: '#dfdfdf',
     rowGap:24,
     flexDirection:'column',
     justifyContent:'flex-start',
     alignItems:'center',
+    backgroundImage: `linear-gradient(180deg, rgba(48, 191, 225, 0.15) 0%, 
+    rgba(48, 191, 225, 0.00) 20.90%), radial-gradient(147.16% 91.22% at 94.81% 10.22%, rgba(113, 255, 238, 0.30) 0%, 
+    rgba(113, 255, 255, 0.00) 100%)`,
   },
   main :{
     flex:0,
@@ -51,17 +53,18 @@ const styles = StyleSheet.create({
   searchBar:{
     flex:0,
     flexDirection:'row',
-    backgroundColor:'#fff',
-    border:'1px solid #afafaf',
-    width: windowWidth-32,
+    backgroundColor:'rgba(255, 255, 255, 0.80)',
+    border:'1px solid #A5E3EC',
+    width: width-32,
     justifyContent:'space-between',
     alignItems:'center',
     padding: 18,
-    borderRadius:6,
+    borderRadius:10,
     marginHorizontal: 16,
+    color:'#93AEB5',
   },
   practitionersContainer:{
-    height:120,
+    height:66,
     marginTop:20,
   }
 })
