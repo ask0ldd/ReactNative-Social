@@ -33,12 +33,13 @@ export default function App() {
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
               <Card text={'aaa'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
               <Card text={'bbb'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
-              <Card text={'ccc'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
-              <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
-              <Card text={'eee'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
+              <Card text={'ccc'} firstname="Usman" avatarUri={require('./assets/avatars/usman_avatar.png')}/>
+              <Card text={'ddd'} firstname="Henry" avatarUri={require('./assets/avatars/henry_avatar.png')}/>
+              <Card text={'eee'} firstname="Masud" avatarUri={require('./assets/avatars/masud_avatar.png')}/>
               <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
             </ScrollView>
         </View>
+        <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20}}>Specialists around You</Text>
       </View>
     </View>
   )
