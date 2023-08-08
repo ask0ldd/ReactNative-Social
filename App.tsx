@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar'
-import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native'
+import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image } from 'react-native'
 import Card from './components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+import Speciality from './components/Speciality';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
@@ -22,6 +23,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
+        <View style={styles.headerContainer}>
+          <View>
+            <Text style={{color:'#29AAC9', fontSize:16, fontFamily:'Montserrat_500Medium', opacity:0.8, marginTop:1}}>Hi Andrew,</Text>
+            <Text style={{color:'#415556', fontSize:12, fontFamily:'Montserrat_700Bold', opacity:0.9, marginTop:4}}>You have 2 new Messages !</Text>
+          </View>
+          <Image style={{borderRadius:10}} source={require('./assets/buttons/bell.png')}/>
+        </View>
         <View style={styles.searchBar}>
           <Text style={{color:'#93AEB5', fontFamily:'Montserrat_400Regular'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Montserrat_500Medium'}}>Send</Text>
         </View>
@@ -40,6 +48,16 @@ export default function App() {
             </ScrollView>
         </View>
         <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20}}>Specialists around You</Text>
+        <View style={styles.specialistsContainer}>
+            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingHorizontal:16, paddingBottom:20}}>
+              <Speciality/>
+              <Speciality/>
+              <Speciality/>
+              <Speciality/>
+              <Speciality/>
+              <Speciality/>
+            </ScrollView>
+        </View>
       </View>
     </View>
   )
@@ -64,6 +82,16 @@ const styles = StyleSheet.create({
     paddingTop:20,
     flexDirection:'column',
   },
+  headerContainer:{
+    flexDirection:'row',
+    paddingHorizontal:20,
+    justifyContent:'space-between',
+  },
+  bellContainer:{
+    width:42,
+    height:42,
+    backgroundColor:'#fff',
+  },
   searchBar:{
     flex:0,
     flexDirection:'row',
@@ -76,8 +104,13 @@ const styles = StyleSheet.create({
     borderRadius:10,
     marginHorizontal: 16,
     color:'#93AEB5',
+    marginTop:20,
   },
   practitionersContainer:{
+    height:100,
+    marginTop:10,
+  },
+  specialistsContainer:{
     height:100,
     marginTop:10,
   }
