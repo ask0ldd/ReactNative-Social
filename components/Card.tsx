@@ -1,15 +1,22 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, ImageSourcePropType, StyleSheet, Text, View } from 'react-native'
 
 type Props = {
-    text : string
+    text : string,
+    avatarUri : ImageSourcePropType
+    firstname : string
 }
 
+// const connie = require('../assets/avatars/connie_avatar.png')
+
 const Card = (props: Props) => {
+
   return (
     <View style={styles.cardContainer}>
-      <Text style={{position:'absolute'}}>{props.text}</Text>
-      <Image style={[styles.avatar, {zIndex:999}]} source={require('../assets/avatars/connie_avatar.png')}/>
-      <Image style={styles.avatar} blurRadius={1} source={require('../assets/avatars/connie_avatar.png')}/>
+      <View style={styles.avatarContainer}>
+        <Image style={[styles.avatar, {zIndex:3, flex:0}]} source={props.avatarUri}/>
+        <Image style={styles.avatar} blurRadius={1} source={props.avatarUri}/>
+      </View>
+      <Text style={{textAlign:'center', fontSize:12,}}>{props.firstname}</Text>
     </View>
   )
 }
@@ -17,7 +24,13 @@ const Card = (props: Props) => {
 export default Card
 
 const styles = StyleSheet.create({
-    cardContainer : {height:66, width:66, backgroundColor:'#fff', padding:20, borderRadius:6, fontFamily: 'Nunito_500Medium',
+    cardContainer :{
+      flexDirection:'column',
+      rowGap:4,
+      width:66,
+      height:100,
+    },
+    avatarContainer : {height:66,width:66, backgroundColor:'#fff', padding:20, borderRadius:6, fontFamily: 'Nunito_500Medium',
      border: '2px solid #fff',
      backgroundImage: `linear-gradient(0deg, rgba(55, 216, 255, 0.30) 0%, rgba(55, 216, 255, 0.30) 100%), 
      linear-gradient(180deg, rgba(138, 221, 239, 0.50) 0%, rgba(0, 127, 134, 0.50) 100%)`,

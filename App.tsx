@@ -1,29 +1,35 @@
 import { StatusBar } from 'expo-status-bar'
 import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native'
 import Card from './components/Card'
+import { useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
 
 export default function App() {
 
-  /*let [fontsLoaded] = useFonts({
+  let [fontsLoaded] = useFonts({
     Nunito_500Medium,
-  })*/
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <View style={styles.searchBar}>
-          <Text style={{color:'#93AEB5'}}>Search</Text><Text style={{color:'#93AEB5'}}>Send</Text>
+          <Text style={{color:'#93AEB5', fontFamily:'Nunito_500Medium'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Nunito_500Medium'}}>Send</Text>
         </View>
         <View style={styles.practitionersContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
-              <Card text={'aaa'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
-              <Card text={'bbb'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
-              <Card text={'ccc'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
-              <Card text={'ddd'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
-              <Card text={'eee'} avatarUri={'../assets/avatars/connie_avatar.png'}/>
+              <Card text={'aaa'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
+              <Card text={'bbb'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
+              <Card text={'ccc'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
+              <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
+              <Card text={'eee'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
+              <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
             </ScrollView>
         </View>
       </View>
@@ -64,7 +70,7 @@ const styles = StyleSheet.create({
     color:'#93AEB5',
   },
   practitionersContainer:{
-    height:66,
+    height:100,
     marginTop:20,
   }
 })
