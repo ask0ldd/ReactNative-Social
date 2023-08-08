@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native'
 import Card from './components/Card'
-import { useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
+import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
@@ -9,7 +9,9 @@ const {height, width} = Dimensions.get('window')
 export default function App() {
 
   let [fontsLoaded] = useFonts({
-    Nunito_500Medium,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
   });
 
   if (!fontsLoaded) {
@@ -20,7 +22,11 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.main}>
         <View style={styles.searchBar}>
-          <Text style={{color:'#93AEB5', fontFamily:'Nunito_500Medium'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Nunito_500Medium'}}>Send</Text>
+          <Text style={{color:'#93AEB5', fontFamily:'Montserrat_400Regular'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Montserrat_500Medium'}}>Send</Text>
+        </View>
+        <View style={{flexDirection:'row'}}>
+          <Text style={{color:'#415556', }}>Your Practitioners</Text>
+          <Text>See More</Text>
         </View>
         <View style={styles.practitionersContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
