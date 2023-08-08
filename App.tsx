@@ -30,9 +30,6 @@ export default function App() {
           </View>
           <Image style={{borderRadius:10}} source={require('./assets/buttons/bell.png')}/>
         </View>
-        <View style={styles.searchBar}>
-          <Text style={{color:'#93AEB5', fontFamily:'Montserrat_400Regular'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Montserrat_500Medium'}}>Send</Text>
-        </View>
         <View style={{flexDirection:'row', marginTop:20, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
           <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Your Practitioners</Text>
           <Text style={{color:'#29AAC9', fontSize:14, fontFamily:'Montserrat_700Bold', opacity:0.9}}>See More</Text>
@@ -47,7 +44,7 @@ export default function App() {
               <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
             </ScrollView>
         </View>
-        <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20}}>Specialists around You</Text>
+        <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20, marginTop:10}}>Specialists around You</Text>
         <View style={styles.specialistsContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingHorizontal:16, paddingBottom:20}}>
               <Speciality/>
@@ -57,6 +54,13 @@ export default function App() {
               <Speciality/>
               <Speciality/>
             </ScrollView>
+        </View>
+        <View style={styles.searchBar}>
+          <Text style={{color:'#93AEB5', fontFamily:'Montserrat_400Regular'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Montserrat_500Medium'}}>Send</Text>
+        </View>
+        <View style={{flexDirection:'row', marginTop:30, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
+          <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Recommanded</Text>
+          <Text style={{color:'#29AAC9', fontSize:14, fontFamily:'Montserrat_700Bold', opacity:0.9}}>See More</Text>
         </View>
       </View>
     </View>
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
     marginTop:10,
   },
   specialistsContainer:{
-    height:100,
+    height:98,
     marginTop:10,
   }
 })
