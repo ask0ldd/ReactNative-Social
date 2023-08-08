@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions } from 'react-native'
 import Card from './components/Card'
-import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular } from '@expo-google-fonts/montserrat';
+import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
@@ -12,6 +12,7 @@ export default function App() {
     Montserrat_400Regular,
     Montserrat_500Medium,
     Montserrat_600SemiBold,
+    Montserrat_700Bold,
   });
 
   if (!fontsLoaded) {
@@ -24,9 +25,9 @@ export default function App() {
         <View style={styles.searchBar}>
           <Text style={{color:'#93AEB5', fontFamily:'Montserrat_400Regular'}}>Search</Text><Text style={{color:'#93AEB5', fontFamily:'Montserrat_500Medium'}}>Send</Text>
         </View>
-        <View style={{flexDirection:'row'}}>
-          <Text style={{color:'#415556', }}>Your Practitioners</Text>
-          <Text>See More</Text>
+        <View style={{flexDirection:'row', marginTop:20, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
+          <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Your Practitioners</Text>
+          <Text style={{color:'#29AAC9', fontSize:14, fontFamily:'Montserrat_700Bold', opacity:0.9}}>See More</Text>
         </View>
         <View style={styles.practitionersContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   },
   practitionersContainer:{
     height:100,
-    marginTop:20,
+    marginTop:10,
   }
 })
 
