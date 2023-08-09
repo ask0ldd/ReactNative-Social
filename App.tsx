@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image } from 'react-native'
+import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image, Button, Pressable } from 'react-native'
 import Card from './components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import Speciality from './components/Speciality';
@@ -28,7 +28,9 @@ export default function App() {
             <Text style={{color:'#29AAC9', fontSize:16, fontFamily:'Montserrat_500Medium', opacity:0.8, marginTop:1}}>Hi Andrew,</Text>
             <Text style={{color:'#415556', fontSize:12, fontFamily:'Montserrat_700Bold', opacity:0.9, marginTop:4}}>You have 2 new Messages !</Text>
           </View>
-          <Image style={{borderRadius:10}} source={require('./assets/buttons/bell.png')}/>
+          <Pressable style={[styles.bell, {borderRadius:10}]}>
+            <Image source={require('./assets/buttons/bell.png')}/>
+          </Pressable>
         </View>
         <View style={{flexDirection:'row', marginTop:20, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
           <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Your Practitioners</Text>
@@ -91,10 +93,18 @@ const styles = StyleSheet.create({
     paddingHorizontal:20,
     justifyContent:'space-between',
   },
-  bellContainer:{
+  /*bellContainer:{
     width:42,
     height:42,
     backgroundColor:'#fff',
+  },*/
+  bell:{
+    boxShadow:'0px 16px 64px rgba(35, 190, 227, 0.55), 0px 4px 8px rgba(92, 169, 188, 0.25)',
+    //backgroundImage:require('./assets/buttons/bell.png')
+    height:42,
+    width:42,
+    backgroundColor:'rgba(255, 255, 255, 1)',
+    overflow:'hidden',
   },
   searchBar:{
     flex:0,
