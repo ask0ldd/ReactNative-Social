@@ -33,7 +33,7 @@ export default function App() {
               <Text style={{color:'#29AAC9', fontSize:16, fontFamily:'Montserrat_500Medium', opacity:0.8, marginTop:1}}>Hi Andrew,</Text>
               <Text style={{color:'#415556', fontSize:12, fontFamily:'Montserrat_700Bold', opacity:0.9, marginTop:4}}>You have 2 new Messages !</Text>
             </View>
-            <Link href="/appointment" asChild>
+            <Link href="/appointment">
               <Pressable style={[styles.bell, {borderRadius:10}]} onPress={() => setMapState(!mapState)}>
                 <Image source={require('@/../assets/buttons/bell.png')}/>
               </Pressable>
