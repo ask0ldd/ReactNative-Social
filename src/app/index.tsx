@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar'
-import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image, Button, Pressable } from 'react-native'
-import Card from '../components/Card'
+import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image, Button, Pressable, Linking } from 'react-native'
+import Card from '@/components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import Speciality from '../components/Speciality';
+import Speciality from '@/components/Speciality';
 import { useState } from 'react';
-import VisitCard from '../components/VisitCard';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-// import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
+import VisitCard from '@/components/VisitCard';
+import { Link } from 'expo-router';
 
 const {height, width} = Dimensions.get('window')
 
@@ -34,9 +33,11 @@ export default function App() {
               <Text style={{color:'#29AAC9', fontSize:16, fontFamily:'Montserrat_500Medium', opacity:0.8, marginTop:1}}>Hi Andrew,</Text>
               <Text style={{color:'#415556', fontSize:12, fontFamily:'Montserrat_700Bold', opacity:0.9, marginTop:4}}>You have 2 new Messages !</Text>
             </View>
-            <Pressable style={[styles.bell, {borderRadius:10}]} onPress={() => setMapState(!mapState)}>
-              <Image source={require('../assets/buttons/bell.png')}/>
-            </Pressable>
+            <Link href="/appointment" asChild>
+              <Pressable style={[styles.bell, {borderRadius:10}]} onPress={() => setMapState(!mapState)}>
+                <Image source={require('@/../assets/buttons/bell.png')}/>
+              </Pressable>
+            </Link>
           </View>
           <View style={{flexDirection:'row', marginTop:20, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
             <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Your Practitioners</Text>
@@ -44,23 +45,23 @@ export default function App() {
           </View>
           <View style={styles.practitionersContainer}>
               <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
-                <Card text={'aaa'} firstname="Connie" avatarUri={require('../assets/avatars/connie_avatar.png')}/>
-                <Card text={'bbb'} firstname="Olga" avatarUri={require('../assets/avatars/olga_avatar.png')}/>
-                <Card text={'ccc'} firstname="Usman" avatarUri={require('../assets/avatars/usman_avatar.png')}/>
-                <Card text={'ddd'} firstname="Henry" avatarUri={require('../assets/avatars/henry_avatar.png')}/>
-                <Card text={'eee'} firstname="Masud" avatarUri={require('../assets/avatars/masud_avatar.png')}/>
-                <Card text={'ddd'} firstname="Olga" avatarUri={require('../assets/avatars/olga_avatar.png')}/>
+                <Card text={'aaa'} firstname="Connie" avatarUri={require('@/../assets/avatars/connie_avatar.png')}/>
+                <Card text={'bbb'} firstname="Olga" avatarUri={require('@/../assets/avatars/olga_avatar.png')}/>
+                <Card text={'ccc'} firstname="Usman" avatarUri={require('@/../assets/avatars/usman_avatar.png')}/>
+                <Card text={'ddd'} firstname="Henry" avatarUri={require('@/../assets/avatars/henry_avatar.png')}/>
+                <Card text={'eee'} firstname="Masud" avatarUri={require('@/../assets/avatars/masud_avatar.png')}/>
+                <Card text={'ddd'} firstname="Olga" avatarUri={require('@/../assets/avatars/olga_avatar.png')}/>
               </ScrollView>
           </View>
           <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20, marginTop:10}}>Specialists around You</Text>
           <View style={styles.specialistsContainer}>
               <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingHorizontal:16, paddingBottom:20}}>
-                <Speciality speciality="General" specialityIconUri={require('../assets/icons/tooth.png')}/>
-                <Speciality speciality="Dental" specialityIconUri={require('../assets/icons/tooth.png')}/>
-                <Speciality speciality="Cardio" specialityIconUri={require('../assets/icons/cardiac.png')}/>
-                <Speciality speciality="Vaccine" specialityIconUri={require('../assets/icons/seringe.png')}/>
-                <Speciality speciality="Eyes" specialityIconUri={require('../assets/icons/glasses.png')}/>
-                <Speciality speciality="Dermato" specialityIconUri={require('../assets/icons/tooth.png')}/>
+                <Speciality speciality="General" specialityIconUri={require('@/../assets/icons/tooth.png')}/>
+                <Speciality speciality="Dental" specialityIconUri={require('@/../assets/icons/tooth.png')}/>
+                <Speciality speciality="Cardio" specialityIconUri={require('@/../assets/icons/cardiac.png')}/>
+                <Speciality speciality="Vaccine" specialityIconUri={require('@/../assets/icons/seringe.png')}/>
+                <Speciality speciality="Eyes" specialityIconUri={require('@/../assets/icons/glasses.png')}/>
+                <Speciality speciality="Dermato" specialityIconUri={require('@/../assets/icons/tooth.png')}/>
               </ScrollView>
           </View>
           <View style={styles.searchBar}>

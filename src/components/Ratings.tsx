@@ -11,7 +11,7 @@ const Ratings = (props: Props) => {
         {
             // JSX for loop eq
             Array.from({ length: props.rating }, (_, index) => (
-                <Image key={'rating'+index} source={require('../assets/icons/star.png')} />
+                <Image key={'rating'+index} source={require('@/../assets/icons/star.png')} />
             ))
         }
     </View>

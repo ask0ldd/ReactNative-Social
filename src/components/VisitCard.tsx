@@ -6,7 +6,7 @@ type Props = {}
 const VisitCard = (props: Props) => {
   return (
     <View style={styles.card}>
-        <Image style={{opacity:0.93, alignSelf:'flex-end', marginLeft:10}} source={require('../assets/avatars/oliver_avatar.png')}/>
+        <Image style={{opacity:0.93, alignSelf:'flex-end', marginLeft:10}} source={require('@/../assets/avatars/oliver_avatar.png')}/>
         <View style={styles.infosContainer}>
           <Text style={{color:'#374B4C', fontSize: 16, fontFamily: 'Montserrat_700Bold', marginTop:24}}>Dr Oliver SYKES</Text>
           <Text style={{color:'rgba(137, 164, 171, 0.9)', fontSize: 12, fontFamily: 'Montserrat_600SemiBold', marginTop:6}}>HEAR SURGEON</Text>

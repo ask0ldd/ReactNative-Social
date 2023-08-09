@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar'
 import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensions, Image, Button, Pressable } from 'react-native'
-import Card from './components/Card'
+import Card from './src/components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import Speciality from './components/Speciality';
+import Speciality from './src/components/Speciality';
 import { useState } from 'react';
-import VisitCard from './components/VisitCard';
+import VisitCard from './src/components/VisitCard';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
