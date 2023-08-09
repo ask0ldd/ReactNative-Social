@@ -4,6 +4,7 @@ import Card from './components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import Speciality from './components/Speciality';
 import { useState } from 'react';
+import VisitCard from './components/VisitCard';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
@@ -71,12 +72,8 @@ export default function App() {
         {mapState && <Text>aaaa</Text>}
         <View style={styles.visitCardContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
-              <Card text={'aaa'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
-              <Card text={'bbb'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
-              <Card text={'ccc'} firstname="Usman" avatarUri={require('./assets/avatars/usman_avatar.png')}/>
-              <Card text={'ddd'} firstname="Henry" avatarUri={require('./assets/avatars/henry_avatar.png')}/>
-              <Card text={'eee'} firstname="Masud" avatarUri={require('./assets/avatars/masud_avatar.png')}/>
-              <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
+              <VisitCard/>
+              <VisitCard/>
             </ScrollView>
         </View>
       </View>
