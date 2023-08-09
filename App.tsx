@@ -54,12 +54,12 @@ export default function App() {
         <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20, marginTop:10}}>Specialists around You</Text>
         <View style={styles.specialistsContainer}>
             <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingHorizontal:16, paddingBottom:20}}>
-              <Speciality/>
-              <Speciality/>
-              <Speciality/>
-              <Speciality/>
-              <Speciality/>
-              <Speciality/>
+              <Speciality speciality="General" specialityIconUri={require('./assets/icons/tooth.png')}/>
+              <Speciality speciality="Dental" specialityIconUri={require('./assets/icons/tooth.png')}/>
+              <Speciality speciality="Cardio" specialityIconUri={require('./assets/icons/cardiac.png')}/>
+              <Speciality speciality="Vaccine" specialityIconUri={require('./assets/icons/seringe.png')}/>
+              <Speciality speciality="Eyes" specialityIconUri={require('./assets/icons/glasses.png')}/>
+              <Speciality speciality="Dermato" specialityIconUri={require('./assets/icons/tooth.png')}/>
             </ScrollView>
         </View>
         <View style={styles.searchBar}>
@@ -71,7 +71,7 @@ export default function App() {
         </View>
         {mapState && <Text>aaaa</Text>}
         <View style={styles.visitCardContainer}>
-            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
+            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 24, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
               <VisitCard/>
               <VisitCard/>
             </ScrollView>
@@ -126,7 +126,9 @@ const styles = StyleSheet.create({
     width: width-32,
     justifyContent:'space-between',
     alignItems:'center',
-    padding: 18,
+    // padding: 18,
+    paddingVertical:20,
+    paddingHorizontal:18,
     borderRadius:10,
     marginHorizontal: 16,
     color:'#93AEB5',
@@ -141,8 +143,8 @@ const styles = StyleSheet.create({
     marginTop:10,
   },
   visitCardContainer:{
-    height:200,
-    marginTop:10,
+    height:220,
+    marginTop:14,
   }
 })
 

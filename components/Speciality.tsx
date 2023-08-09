@@ -1,15 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, ImageSourcePropType } from 'react-native'
 
-type Props = {}
+type Props = {
+    speciality : string
+    specialityIconUri : ImageSourcePropType
+}
 
 const Speciality = (props: Props) => {
   return (
     <View style={styles.specialityContainer}>
         <View style={styles.specialityButton}>
-            <Image style={styles.icon} source={require('../assets/icons/tooth.png')}/>
+            <Image style={styles.icon} source={props.specialityIconUri}/>
         </View>
         <Text style={{textAlign:'center', fontSize:12, color:'#374B4C', fontFamily:'Montserrat_600SemiBold'}}>
-            General
+            {props.speciality}
         </Text>
     </View>
   )
