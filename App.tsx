@@ -3,11 +3,15 @@ import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensio
 import Card from './components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import Speciality from './components/Speciality';
+import { useState } from 'react';
 // import {  useFonts, Nunito_500Medium } from '@expo-google-fonts/nunito';
 
 const {height, width} = Dimensions.get('window')
 
 export default function App() {
+
+  const [mapState, setMapState] = useState<boolean>(false)
+  const [mapSwitchState, setMapSwitchState] = useState<boolean>(false)
 
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
@@ -28,7 +32,7 @@ export default function App() {
             <Text style={{color:'#29AAC9', fontSize:16, fontFamily:'Montserrat_500Medium', opacity:0.8, marginTop:1}}>Hi Andrew,</Text>
             <Text style={{color:'#415556', fontSize:12, fontFamily:'Montserrat_700Bold', opacity:0.9, marginTop:4}}>You have 2 new Messages !</Text>
           </View>
-          <Pressable style={[styles.bell, {borderRadius:10}]}>
+          <Pressable style={[styles.bell, {borderRadius:10}]} onPress={() => setMapState(!mapState)}>
             <Image source={require('./assets/buttons/bell.png')}/>
           </Pressable>
         </View>
@@ -63,6 +67,17 @@ export default function App() {
         <View style={{flexDirection:'row', marginTop:30, justifyContent:'space-between', alignItems:'baseline', paddingHorizontal:16}}>
           <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold'}}>Recommanded</Text>
           <Text style={{color:'#29AAC9', fontSize:14, fontFamily:'Montserrat_700Bold', opacity:0.9}}>See More</Text>
+        </View>
+        {mapState && <Text>aaaa</Text>}
+        <View style={styles.visitCardContainer}>
+            <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingLeft:16, paddingRight:16, paddingBottom:20}}>
+              <Card text={'aaa'} firstname="Connie" avatarUri={require('./assets/avatars/connie_avatar.png')}/>
+              <Card text={'bbb'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
+              <Card text={'ccc'} firstname="Usman" avatarUri={require('./assets/avatars/usman_avatar.png')}/>
+              <Card text={'ddd'} firstname="Henry" avatarUri={require('./assets/avatars/henry_avatar.png')}/>
+              <Card text={'eee'} firstname="Masud" avatarUri={require('./assets/avatars/masud_avatar.png')}/>
+              <Card text={'ddd'} firstname="Olga" avatarUri={require('./assets/avatars/olga_avatar.png')}/>
+            </ScrollView>
         </View>
       </View>
     </View>
@@ -126,6 +141,10 @@ const styles = StyleSheet.create({
   },
   specialistsContainer:{
     height:98,
+    marginTop:10,
+  },
+  visitCardContainer:{
+    height:200,
     marginTop:10,
   }
 })
