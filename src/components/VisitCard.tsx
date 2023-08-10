@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import Ratings from './Ratings'
 
 type Props = {}
@@ -14,6 +14,17 @@ const VisitCard = (props: Props) => {
             <Ratings rating={5}/>
             <Text style={{color:'rgba(137, 164, 171, 0.9)', fontSize: 12, fontFamily: 'Montserrat_600SemiBold'}}>(22 Reviews)</Text>
           </View>
+          <View style={{flexDirection:'row', columnGap:8, marginTop:20}}>
+            <View style={styles.colSlot}>
+              <Text style={{fontFamily:'Montserrat_600SemiBold', fontSize:10, color:'rgba(137, 164, 171, 0.9)'}}>Free Slot</Text><Text style={{fontFamily:'Montserrat_700Bold', fontSize:12, color:'#374B4C', marginTop:8}}>02-18-2022</Text>
+            </View>
+            <View style={styles.colDistance}>
+              <Text style={{fontFamily:'Montserrat_600SemiBold', fontSize:10, color:'rgba(137, 164, 171, 0.9)'}}>Distance</Text><Text style={{fontFamily:'Montserrat_700Bold', fontSize:12, color:'#374B4C', marginTop:8}}>2 Miles</Text>
+            </View>
+          </View>
+          <Pressable style={styles.appointmentButton}>
+              <Text style={{fontFamily:'Montserrat_700Bold', fontSize:12, color:'#fff', marginTop:8}}>Apppointment</Text>
+          </Pressable>
         </View>
     </View>
   )
@@ -33,6 +44,22 @@ const styles = StyleSheet.create({
       height:'100%',
       flexDirection : 'column',
       marginLeft : 8,
+    },
+    colSlot:{
+      flexDirection : 'column',
+    },
+    colDistance:{
+      flexDirection : 'column',
+    },
+    appointmentButton : {
+      borderRadius: 6,
+      backgroundImage: 'linear-gradient(180deg, rgba(46, 174, 204, 0.00) 52.60%, #00A6CD 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 61.46%), linear-gradient(180deg, rgba(35, 190, 227, 0.80) 0%, rgba(35, 190, 227, 0.80) 100%)',
+      boxShadow: '0px 8px 16px 0px rgba(57, 197, 230, 0.60)',
+      justifyContent:'center',
+      alignItems:'center',
+      paddingBottom: 12,
+      paddingTop: 4,
+      marginTop:10,
     }
 })
 
