@@ -7,7 +7,7 @@ const Appointment = (props: Props) => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection:'row', columnGap:18, paddingHorizontal:18, width:'100%'}}>
-        <View style={styles.specialistCard}>aaa</View>
+        <View style={styles.specialistCard}>aaabbb</View>
       </View>
     </View>
   )

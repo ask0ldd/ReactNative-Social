@@ -3,9 +3,9 @@ import { FlatList, ImageBackground, ScrollView, StyleSheet, Text, View, Dimensio
 import Card from '@/components/Card'
 import { useFonts, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import Speciality from '@/components/Speciality';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import VisitCard from '@/components/VisitCard';
-import { Link } from 'expo-router';
+import { Link, SplashScreen } from 'expo-router';
 
 const {height, width} = Dimensions.get('window')
 
@@ -20,6 +20,12 @@ export default function App() {
     Montserrat_600SemiBold,
     Montserrat_700Bold,
   });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
   if (!fontsLoaded) {
     return null;

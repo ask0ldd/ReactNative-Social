@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
       width:66,
       height:100,
     },
-    avatarContainer : {height:66,width:66, backgroundColor:'#fff', padding:20, borderRadius:12, fontFamily: 'Nunito_500Medium',
+    avatarContainer : {height:66,width:66, backgroundColor:'#fff', padding:20, borderRadius:12, fontFamily: 'Montserrat_500Medium',
      border: '2px solid #fff',
      backgroundImage: `linear-gradient(0deg, rgba(55, 216, 255, 0.30) 0%, rgba(55, 216, 255, 0.30) 100%), 
      linear-gradient(180deg, rgba(138, 221, 239, 0.50) 0%, rgba(0, 127, 134, 0.50) 100%)`,
