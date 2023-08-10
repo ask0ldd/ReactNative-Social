@@ -27,6 +27,7 @@ export default function App() {
 
   return (
       <View style={styles.container}>
+        <StatusBar style="auto"/>
         <View style={styles.main}>
           <View style={styles.headerContainer}>
             <View>
