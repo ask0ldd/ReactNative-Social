@@ -57,7 +57,7 @@ export default function App() {
           <Text style={{color:'#415556', fontSize:20, fontFamily:'Montserrat_700Bold', marginLeft:20, marginTop:10}}>Specialists around You</Text>
           <View style={styles.specialistsContainer}>
               <ScrollView horizontal={true} contentContainerStyle={{columnGap: 16, paddingHorizontal:16, paddingBottom:20}}>
-                <Speciality speciality="General" specialityIconUri={require('@/../assets/icons/tooth.png')}/>
+                <Speciality speciality="General" specialityIconUri={require('@/../assets/icons/general.png')}/>
                 <Speciality speciality="Dental" specialityIconUri={require('@/../assets/icons/tooth.png')}/>
                 <Speciality speciality="Cardio" specialityIconUri={require('@/../assets/icons/cardiac.png')}/>
                 <Speciality speciality="Vaccine" specialityIconUri={require('@/../assets/icons/seringe.png')}/>
